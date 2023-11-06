@@ -1,36 +1,95 @@
 const express = require('express');
+const Drone = require('../models/Drone.model');
 const router = express.Router();
 
 // require the Drone model here
 
-router.get('/drones', (req, res, next) => {
-  // Iteration #2: List the drones
-  // ... your code here
+router.get('/drones', async (req, res, next) => {
+
+  try{
+
+    const allDrones = await Drone.find()
+
+    res.render("drones/list.hbs", {
+      allDrones
+
+    })
+
+  }catch(error){
+
+    next(error)
+  }
+
 });
 
-router.get('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.get('/drones/create', async (req, res, next) => {
+
+  try {
+
+    res.render("drones/create-form.hbs")
+
+  }catch(error){
+    next(error)
+  }
+
+
+  
 });
 
-router.post('/drones/create', (req, res, next) => {
-  // Iteration #3: Add a new drone
-  // ... your code here
+router.post('/drones/create',async (req, res, next) => {
+  try {
+
+    // console.log(req)
+    await Drone.create({
+
+      name: req.body.name,
+      propellers: req.body.propellers,
+      maxSpeed: req.body.maxSpeed,
+
+    })
+
+    res.redirect("/drones")
+
+  }catch(error){
+    next(error)
+  }
 });
 
-router.get('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.get('/drones/:id/edit',async (req, res, next) => {
+  try {
+
+    const editDrone = await Drone.findById(req.params.id)
+
+    console.log(editDrone)
+    res.render("drones/update-form.hbs", {
+      editDrone
+    })
+
+
+
+  }catch(error){
+    next(error)
+  }
 });
 
-router.post('/drones/:id/edit', (req, res, next) => {
-  // Iteration #4: Update the drone
-  // ... your code here
+router.post('/drones/:id/edit',async (req, res, next) => {
+  try {
+
+
+
+  }catch(error){
+    next(error)
+  }
 });
 
-router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+router.post('/drones/:id/delete', async(req, res, next) => {
+  try {
+
+
+
+  }catch(error){
+    next(error)
+  }
 });
 
 module.exports = router;
