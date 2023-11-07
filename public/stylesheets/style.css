@@ -1,8 +1,107 @@
+html {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding: 50px;
-  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+
+#index-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: right;
+  background-image: url("https://img.freepik.com/foto-gratis/pico-montana-vista-dron-volador-generado-ia_188544-13377.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699056000&semt=ais");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: burlywood;
+}
+
+#eachDrone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 3px solid black;
+  border-radius: 25px;
+  width: 300px;
+}
+
+h1 {
+  font-size: 50px;
+  margin-top: 50px;
+  margin-right: 50px;
+  color: white;
+}
+
+#indexP {
+  font-size: 25px;
+  margin-right: 50px;
+  color: white;
+}
+
+h2 {
+  margin-top: 50px;
+}
+
+button {
+  border-radius: 25px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#listContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#update {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
